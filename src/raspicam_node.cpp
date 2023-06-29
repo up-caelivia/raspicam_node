@@ -1354,7 +1354,7 @@ int main(int argc, char** argv) {
   double max_freq = desired_freq * 1.05;
 
   if (state_srv.enable_raw_pub){
-    auto image_pub = nh_topics.advertise<sensor_msgs::Image>("image", 1);
+    auto image_pub = nh_topics.advertise<sensor_msgs::Image>("image_raw", 1);
     image.pub.reset(new DiagnosedPublisher<sensor_msgs::Image>(
         image_pub, state_srv.updater, FrequencyStatusParam(&min_freq, &max_freq, 0.1, 10), TimeStampStatusParam(0, 0.2)));
   }
